@@ -1,0 +1,45 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/OwnersDapper",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "owners",
+      "DownstreamPathTemplate": "/OwnersDapper",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7001
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/OwnersEF",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "owners",
+      "DownstreamPathTemplate": "/OwnersEF",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7001
+        }
+      ]
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "owners",
+      "Config": [
+        {
+          "Name": "PBTestAPIGateway",
+          "Version": "v1",
+          "Url": "https://localhost:7001/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7002"
+  }
+}
